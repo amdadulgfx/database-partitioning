@@ -62,6 +62,9 @@ COMMENT ON TABLE sales_2024 IS 'Partition for 2024 sales data';
 COMMENT ON TABLE sales_2025 IS 'Partition for 2025 sales data';
 COMMENT ON TABLE sales_2026 IS 'Partition for 2026 sales data';
 
+-- Index on partitioned table (mirrors unpartitioned table index for fair comparison)
+CREATE INDEX idx_partitioned_order_date ON sales_partitioned (order_date);
+
 -- ============================================================================
 -- VERIFICATION QUERIES (Optional - run after 02_seed_data.sql)
 -- ============================================================================
